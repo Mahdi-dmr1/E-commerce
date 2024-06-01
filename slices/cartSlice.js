@@ -1,3 +1,5 @@
+"use client";
+
 import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
