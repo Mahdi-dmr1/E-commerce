@@ -1,113 +1,116 @@
+"use client";
+
+import {
+	images,
+	secondSliderImages,
+	sendToday,
+	sendTodayTitle,
+	laptopSale,
+	trust,
+	beneficialInfo,
+} from "../data/data";
+
+import contact from "../server/public/assets/contact/contact.jpg";
+
+import Assemble from "../server/public/assets/onlineAssemble/gamingPc.webp";
+
+import Navbar from "./Navbar";
+import SwiperJs from "./SwiperJs";
+import BestDeal from "./BestDeal";
+import SendToday from "./SendToday";
+import BeneficialInfo from "./BeneficialInfo";
+import Footer from "./Footer";
+import Sidebar from "./Sidebar";
+import { useState } from "react";
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+export default function HomePage() {
+	const [sidebar, setSidebar] = useState(false);
+	const handleSidebar = () => {
+		setSidebar(!sidebar);
+	};
+	return (
+		<>
+			<Navbar handleSidebar={handleSidebar} />
+			{/* products banner */}
+			{sidebar === true ? <Sidebar handleSidebar={handleSidebar} /> : null}
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+			<div className="w-full ">
+				<div className="flex items-center justify-center mt-28 lg:mt-4">
+					<div className="w-full lg:w-3/4 rounded-lg overflow-hidden">
+						<SwiperJs images={images} />
+					</div>
+				</div>
+				<div className="mt-4 flex justify-center">
+					<div className="grid grid-cols-5  gap-3 w-full lg:w-3/4">
+						{/*right side of the page */}
+						<div className="hidden lg:flex">
+							<div className="w-full">
+								<div
+									className="w-full shadow-lg rounded-lg py-4 text-center  mb-2 hover:scale-105 duration-300 "
+									style={{ backgroundColor: "#17B5B5" }}>
+									<h1 className="text-white text-lg flex justify-center">
+										خرید جنس{" "}
+										<h1 className="text-black mr-2 font-bold">استوک</h1>
+									</h1>
+								</div>
+								{/*matalebe mofid*/}
+								<BeneficialInfo beneficialInfo={beneficialInfo} />
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+								<div
+									style={{
+										backgroundImage: `url(${Assemble.src})`,
+										backgroundPosition: "center",
+										objectFit: "fill",
+									}}
+									className=" mb-2 bg-white shadow-lg rounded-lg h-64 flex justify-center items-center hover:scale-105 overflow-hidden duration-300">
+									<h1 className=" text-3xl text-white">اسمبل آنلاین</h1>
+								</div>
+								<Image
+									src={contact}
+									loading="lazy"
+									width={400}
+									height={400}
+									className="mb-2 rounded-lg shadow-lg hover:scale-105  duration-300"
+								/>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+								{/*matalebe mofid*/}
+								<BeneficialInfo beneficialInfo={beneficialInfo} />
+							</div>
+						</div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+						{/*left side of the page */}
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+						<div className=" lg:col-span-4 col-span-5 ">
+							<BestDeal />
+							{/*trust signs */}
+							<div className="p-10 bg-white rounded-lg shadow-lg hidden lg:flex justify-center items-center mb-4">
+								{trust.map((data, key) => (
+									<div className="mx-10" key={key}>
+										{data.icon}
+										<p className="text-gray-500 text-center">{data.title}</p>
+									</div>
+								))}
+							</div>
+
+							<div className="w-full p-4 bg-white shadow-lg rounded-lg mb-4">
+								<SendToday sendToday={sendToday} title={sendTodayTitle} />
+							</div>
+							{/*slider*/}
+							<div className="rounded-lg overflow-hidden mb-4 shadow-lg">
+								<SwiperJs images={secondSliderImages} />
+							</div>
+
+							<div className="w-full p-4 bg-white shadow-lg rounded-lg mb-4">
+								<SendToday sendToday={sendToday} title={laptopSale} />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className="w-full">
+					<Footer />
+				</div>
+			</div>
+		</>
+	);
 }
