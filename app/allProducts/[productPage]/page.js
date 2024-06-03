@@ -74,7 +74,7 @@ export default function ProductPage() {
 									<SwiperSlide key={key}>
 										<img
 											loading="lazy"
-											src={`http://localhost:9000/assets/${info}`}
+											src={`https://e-commerce-latest-khaki.vercel.app/assets/${info}`}
 										/>
 									</SwiperSlide>
 								))}
@@ -91,7 +91,7 @@ export default function ProductPage() {
 									<SwiperSlide key={key}>
 										<img
 											loading="lazy"
-											src={`http://localhost:9000/assets/${info}`}
+											src={`https://e-commerce-latest-khaki.vercel.app/assets/${info}`}
 										/>
 									</SwiperSlide>
 								))}
