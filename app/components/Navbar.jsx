@@ -1,5 +1,5 @@
 import Link from "next/link";
-import logo1 from "../server/public/assets/logo1.jpg";
+import logo1 from "../../server/public/assets/logo1.jpg";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { TiShoppingCart } from "react-icons/ti";
 import { useSelector } from "react-redux";

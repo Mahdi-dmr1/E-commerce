@@ -1,5 +1,5 @@
-import gamingPcAs from "../server/public/assets/pishnahadVizhe/gamingPcAs6.jpg";
-import GraphicsCard from "../server/public/assets/mofid/graphicsCard.jpg";
+import gamingPcAs from "../../server/public/assets/pishnahadVizhe/gamingPcAs6.jpg";
+import GraphicsCard from "../../server/public/assets/mofid/graphicsCard.jpg";
 import Image from "next/image";
 export default function BestDeal() {
 	return (

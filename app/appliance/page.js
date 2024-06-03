@@ -1,15 +1,15 @@
 "use client";
 
 import { useGetAllProductsQuery } from "@/slices/productApi";
-import Navbar from "../Navbar";
+import Navbar from "../components/Navbar";
 
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-import ProductsPage from "../ProductsPage";
+import ProductsPage from "../components/ProductsPage";
 import { useState } from "react";
-import Sidebar from "../Sidebar";
-import FilterByBrand from "../FilterByBrand";
-import FilterByType from "../FilterByType";
+import Sidebar from "../components/Sidebar";
+import FilterByBrand from "../components/FilterByBrand";
+import FilterByType from "../components/FilterByType";
 
 export default function Appliance() {
 	//sidebar

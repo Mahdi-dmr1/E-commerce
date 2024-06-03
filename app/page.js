@@ -14,13 +14,13 @@ import contact from "../server/public/assets/contact/contact.jpg";
 
 import Assemble from "../server/public/assets/onlineAssemble/gamingPc.webp";
 
-import Navbar from "./Navbar";
-import SwiperJs from "./SwiperJs";
-import BestDeal from "./BestDeal";
-import SendToday from "./SendToday";
-import BeneficialInfo from "./BeneficialInfo";
-import Footer from "./Footer";
-import Sidebar from "./Sidebar";
+import Navbar from "./components/Navbar";
+import SwiperJs from "./components/SwiperJs";
+import BestDeal from "./components/BestDeal";
+import SendToday from "./components/SendToday";
+import BeneficialInfo from "./components/BeneficialInfo";
+import Footer from "./components/Footer";
+import Sidebar from "./components/Sidebar";
 import { useState } from "react";
 import Image from "next/image";
 

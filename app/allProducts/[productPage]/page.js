@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "@/app/Navbar";
+import Navbar from "@/app/components/Navbar";
 import { useGetProductQuery } from "@/slices/productApi";
 import { useRouter, useParams } from "next/navigation";
 
@@ -9,7 +9,7 @@ import { IoIosLink } from "react-icons/io";
 import { IoStatsChartSharp } from "react-icons/io5";
 import { CiStar, CiLocationOn } from "react-icons/ci";
 import { FaRegCalendarAlt } from "react-icons/fa";
-import Footer from "@/app/Footer";
+import Footer from "@/app/components/Footer";
 
 //swiper tryOut
 import React, { useState } from "react";
@@ -23,8 +23,8 @@ import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/slices/cartSlice";
-import CustomNumeralNumericFormat from "@/app/Price";
-import Sidebar from "@/app/Sidebar";
+import CustomNumeralNumericFormat from "@/app/components/Price";
+import Sidebar from "@/app/components/Sidebar";
 
 export default function ProductPage() {
 	//sidebar

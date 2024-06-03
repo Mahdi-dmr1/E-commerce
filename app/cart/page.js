@@ -1,7 +1,7 @@
 "use client";
 
-import Footer from "../Footer";
-import Navbar from "../Navbar";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 import { FaInfoCircle } from "react-icons/fa";
 
 import { FaX } from "react-icons/fa6";
@@ -14,8 +14,8 @@ import {
 	selectAll,
 } from "@/slices/cartSlice";
 import { useEffect, useState } from "react";
-import CustomNumeralNumericFormat from "../Price";
-import Sidebar from "../Sidebar";
+import CustomNumeralNumericFormat from "../components/Price";
+import Sidebar from "../components/Sidebar";
 
 export default function Cart() {
 	//sidebar

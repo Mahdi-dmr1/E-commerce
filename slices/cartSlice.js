@@ -6,24 +6,6 @@ import { toast } from "react-toastify";
 
 const cartAdapter = createEntityAdapter();
 
-const useSessionStorageGetItem = (name) => {
-	const [value, setValue] = useState("");
-
-	useEffect(() => {
-		setValue(sessionStorage.getItem(name));
-	}, []);
-	return value;
-};
-const useSessionStorageSetItem = (name, json) => {
-	const [value, setValue] = useState("");
-
-	useEffect(() => {
-		setValue(sessionStorage.setItem(name, json));
-	}, []);
-
-	return value;
-};
-
 const initialState = cartAdapter.getInitialState({
 	cartTotalAmount: 0,
 	cartQty: 0,
@@ -34,11 +16,13 @@ const cartSlice = createSlice({
 	initialState,
 	reducers: {
 		populateCart(state, action) {
-			if (useSessionStorageGetItem("cartItems")) {
-				cartAdapter.setAll(
-					state,
-					JSON.parse(useSessionStorageGetItem("cartItems"))
-				);
+			if (typeof Window !== "undefined") {
+				if (Window.sessionStorage.getItem("cartItems")) {
+					cartAdapter.setAll(
+						state,
+						JSON.parse(Window.sessionStorage.getItem("cartItems"))
+					);
+				}
 			}
 		},
 		addToCart(state, action) {
@@ -52,7 +36,12 @@ const cartSlice = createSlice({
 					position: "bottom-right",
 				});
 			}
-			useSessionStorageSetItem("cartItems", JSON.stringify(state.entities));
+			if (typeof Window !== "undefined") {
+				Window.sessionStorage.setItem(
+					"cartItems",
+					JSON.stringify(state.entities)
+				);
+			}
 		},
 		getTotals(state, action) {
 			let { total, qty } = Object.values(state.entities).reduce(
@@ -81,11 +70,22 @@ const cartSlice = createSlice({
 			} else if (product.cartQty === 1) {
 				cartAdapter.removeOne(state, action.payload.id);
 			}
-			useSessionStorageSetItem("cartItems", JSON.stringify(state.entities));
+
+			if (typeof Window !== "undefined") {
+				Window.sessionStorage.setItem(
+					"cartItems",
+					JSON.stringify(state.entities)
+				);
+			}
 		},
 		removeFromCart(state, action) {
 			cartAdapter.removeOne(state, action.payload.id);
-			useSessionStorageSetItem("cartItems", JSON.stringify(state.entities));
+			if (typeof Window !== "undefined") {
+				Window.sessionStorage.setItem(
+					"cartItems",
+					JSON.stringify(state.entities)
+				);
+			}
 
 			toast.error("محصول از سبد خرید حذف شد", {
 				position: "bottom-left",
