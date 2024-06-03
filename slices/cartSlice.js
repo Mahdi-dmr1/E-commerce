@@ -17,10 +17,10 @@ const cartSlice = createSlice({
 	reducers: {
 		populateCart(state, action) {
 			if (typeof Window !== "undefined") {
-				if (Window.sessionStorage.getItem("cartItems")) {
+				if (sessionStorage.getItem("cartItems")) {
 					cartAdapter.setAll(
 						state,
-						JSON.parse(Window.sessionStorage.getItem("cartItems"))
+						JSON.parse(sessionStorage.getItem("cartItems"))
 					);
 				}
 			}
@@ -37,10 +37,7 @@ const cartSlice = createSlice({
 				});
 			}
 			if (typeof Window !== "undefined") {
-				Window.sessionStorage.setItem(
-					"cartItems",
-					JSON.stringify(state.entities)
-				);
+				sessionStorage.setItem("cartItems", JSON.stringify(state.entities));
 			}
 		},
 		getTotals(state, action) {
@@ -72,19 +69,13 @@ const cartSlice = createSlice({
 			}
 
 			if (typeof Window !== "undefined") {
-				Window.sessionStorage.setItem(
-					"cartItems",
-					JSON.stringify(state.entities)
-				);
+				sessionStorage.setItem("cartItems", JSON.stringify(state.entities));
 			}
 		},
 		removeFromCart(state, action) {
 			cartAdapter.removeOne(state, action.payload.id);
 			if (typeof Window !== "undefined") {
-				Window.sessionStorage.setItem(
-					"cartItems",
-					JSON.stringify(state.entities)
-				);
+				sessionStorage.setItem("cartItems", JSON.stringify(state.entities));
 			}
 
 			toast.error("محصول از سبد خرید حذف شد", {
