@@ -10,7 +10,7 @@ export const fetchProducts = createAsyncThunk(
 	"products/fetchProducts",
 	async () => {
 		try {
-			const response = await axios.get("http://localhost:9000/allProducts");
+			const response = await axios.get("https://e-commerce-latest-khaki.vercel.app/allProducts");
 			return response.data;
 		} catch (err) {
 			console.log(err);
