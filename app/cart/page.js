@@ -66,7 +66,7 @@ export default function Cart() {
 												<img
 													loading="lazy"
 													className="p-10"
-													src={`http://localhost:9000/assets/${item.image}`}
+													src={`https://e-commerce-latest-khaki.vercel.app/assets/${item.image}`}
 												/>
 											</div>
 											<div className="col-span-7 mt-5 ">
