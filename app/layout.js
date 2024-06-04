@@ -1,11 +1,9 @@
-import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import StoreProvider from "./components/StoreProvider";
 import { ToastContainer } from "react-toastify";
 
-const inter = Inter({ subsets: ["latin"] });
 const vazirmatn = localFont({
 	src: "./Vazir.woff2",
 	display: "swap",
@@ -19,9 +17,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<ToastContainer />
 			<StoreProvider>
-				<body className={vazirmatn.className}>{children}</body>
+				<body className={vazirmatn.className}>
+					<ToastContainer />
+					{children}
+				</body>
 			</StoreProvider>
 		</html>
 	);

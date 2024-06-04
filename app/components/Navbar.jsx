@@ -7,6 +7,7 @@ import { selectAll } from "@/slices/cartSlice";
 import CustomNumeralNumericFormat from "./Price";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { navLinks } from "@/data/data";
+import Image from "next/image";
 
 export default function Navbar({ handleSidebar }) {
 	const cart = useSelector(selectAll);
@@ -70,7 +71,11 @@ export default function Navbar({ handleSidebar }) {
 				<div className="">
 					<Link href={"/"} className="flex justify-center items-center">
 						<h1 className="hidden lg:flex md:text-2xl">My Shop</h1>
-						<img src={logo1.src} className="rounded-full w-24 h-24 lg:flex" />
+						<Image
+							alt="logo"
+							src={logo1}
+							className="rounded-full w-24 h-24 lg:flex"
+						/>
 					</Link>
 				</div>
 			</div>

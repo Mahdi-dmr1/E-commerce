@@ -64,6 +64,7 @@ export default function Cart() {
 													<FaX className=" absolute text-red-500 ml-44 mb-40 " />
 												</button>
 												<img
+													alt="cart"
 													loading="lazy"
 													className="p-10"
 													src={`http://localhost:9000/assets/${item.image}`}
@@ -91,13 +92,13 @@ export default function Cart() {
 														-
 													</button>
 												</div>
-												<h1 className="text-red-500 text-end mt-12">
+												<div className="text-red-500 text-end mt-12">
 													<CustomNumeralNumericFormat
 														value={item.price}
 														thousandSeparator=","
 														suffix={` تومان `}
 													/>
-												</h1>
+												</div>
 											</div>
 										</>
 									))
@@ -123,13 +124,13 @@ export default function Cart() {
 										<hr className="mb-4" />
 										<div className="flex justify-between mb-4">
 											<h1>قابل پرداخت:</h1>
-											<h1 className="text-lg">
+											<div className="text-lg">
 												<CustomNumeralNumericFormat
 													value={cartTotalAmount}
 													thousandSeparator=","
 													suffix={` تومان `}
 												/>
-											</h1>
+											</div>
 										</div>
 									</>
 								)}

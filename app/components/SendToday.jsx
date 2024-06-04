@@ -15,6 +15,7 @@ export default function SendToday({ sendToday, title }) {
 							<div className="flex justify-center h-1/2">
 								<Image
 									loading="lazy"
+									alt="send-today"
 									width={100}
 									height={100}
 									src={data.image}

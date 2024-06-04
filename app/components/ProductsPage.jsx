@@ -2,8 +2,9 @@ import Link from "next/link";
 
 import { FaShoppingBasket } from "react-icons/fa";
 import CustomNumeralNumericFormat from "./Price";
+import dynamic from "next/dynamic";
 
-export default function ProductsPage({ information, title }) {
+function ProductsPage({ information, title }) {
 	return (
 		<div className=" shadow-lg rounded-lg bg-white ">
 			<h1 className="text-start p-4 text-gray-700 font-bold text-lg ">
@@ -28,13 +29,13 @@ export default function ProductsPage({ information, title }) {
 								</p>
 								<div className="flex justify-between mt-6">
 									<FaShoppingBasket className="text-xl text-green-600" />
-									<h1 className="text-end">
+									<div className="text-end">
 										<CustomNumeralNumericFormat
 											value={info.price}
 											thousandSeparator=","
 											suffix={` تومان `}
 										/>
-									</h1>
+									</div>
 								</div>
 							</Link>
 						</div>
@@ -44,3 +45,4 @@ export default function ProductsPage({ information, title }) {
 		</div>
 	);
 }
+export default dynamic(() => Promise.resolve(ProductsPage), { ssr: false });

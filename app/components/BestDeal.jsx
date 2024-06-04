@@ -16,6 +16,7 @@ export default function BestDeal() {
 								height={150}
 								loading="lazy"
 								src={GraphicsCard.src}
+								alt="best-deal"
 							/>
 						</div>
 

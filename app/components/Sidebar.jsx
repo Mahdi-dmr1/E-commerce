@@ -19,9 +19,9 @@ export default function Sidebar({ handleSidebar }) {
 					سبد خرید{" "}
 				</Link>
 			</div>
-			<h1 className="mt-10 text-center">
+			<div className="mt-10 text-center">
 				Created with love by <span className="text-red-700">Damirchi</span>
-			</h1>
+			</div>
 		</div>
 	);
 }

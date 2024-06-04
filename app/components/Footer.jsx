@@ -74,37 +74,45 @@ export default function Footer() {
 						<div>
 							<h1 className="text-md font-bold mb-3">مطالب مفید</h1>
 							{mmdIt.map((data, key) => (
-								<h1 key={key} className="text-gray-500 hover:text-red-400 mb-1">
+								<div
+									key={key}
+									className="text-gray-500 hover:text-red-400 mb-1">
 									<GoDotFill className="inline-flex text-xs" />
 									{data.title}
-								</h1>
+								</div>
 							))}
 						</div>
 						<div>
 							<h1 className="text-md font-bold mb-3">مطالب مفید</h1>
 							{guide.map((data, key) => (
-								<h1 key={key} className="text-gray-500 hover:text-red-400 mb-1">
+								<div
+									key={key}
+									className="text-gray-500 hover:text-red-400 mb-1">
 									<GoDotFill className="inline-flex text-xs" />
 									{data.title}
-								</h1>
+								</div>
 							))}
 						</div>
 						<div>
 							<h1 className="text-md font-bold mb-3">مطالب مفید</h1>
 							{benefit.map((data, key) => (
-								<h1 key={key} className="text-gray-500 hover:text-red-400 mb-1">
+								<div
+									key={key}
+									className="text-gray-500 hover:text-red-400 mb-1">
 									<GoDotFill className="inline-flex text-xs" />
 									{data.title}
-								</h1>
+								</div>
 							))}
 						</div>
 						<div>
 							<h1 className="text-md font-bold mb-3">مطالب مفید</h1>
 							{services.map((data, key) => (
-								<h1 key={key} className="text-gray-500 hover:text-red-400 mb-1">
+								<div
+									key={key}
+									className="text-gray-500 hover:text-red-400 mb-1">
 									<GoDotFill className="inline-flex text-xs" />
 									{data.title}
-								</h1>
+								</div>
 							))}
 						</div>
 						<div className="flex justify-center ">

@@ -73,6 +73,7 @@ export default function ProductPage() {
 								{data?.exteraImages.map((info, key) => (
 									<SwiperSlide key={key}>
 										<img
+											alt="product"
 											loading="lazy"
 											src={`http://localhost:9000/assets/${info}`}
 										/>
@@ -90,6 +91,7 @@ export default function ProductPage() {
 								{data?.exteraImages.map((info, key) => (
 									<SwiperSlide key={key}>
 										<img
+											alt="product-under"
 											loading="lazy"
 											src={`http://localhost:9000/assets/${info}`}
 										/>
@@ -101,25 +103,25 @@ export default function ProductPage() {
 							<h1>{data?.description}</h1>
 							<h1 className="text-gray-500">{data?.subDescription}</h1>
 							<hr className="mt-2 mb-6" />
-							<h1 className="flex mb-2">
+							<div className="flex mb-2">
 								<SlBadge className="mt-1 text-blue-500" />
 								نوع گارانتی:
-							</h1>
-							<h1 className="text-gray-500 flex mb-2">
+							</div>
+							<div className="text-gray-500 flex mb-2">
 								{data?.warranty}
 								<IoIosLink />
-							</h1>
+							</div>
 							<h1 className="mb-2">نوع کالا:</h1>
 							<h1 className="text-gray-500 mb-4">سفارشی</h1>
 							<h1 className="mb-2">تعداد:</h1>
-							<h1 className="mb-6">
+							<div className="mb-6">
 								<CustomNumeralNumericFormat
 									value={data?.price}
 									thousandSeparator=","
 									suffix={` تومان `}
 									prefix={`قیمت: `}
 								/>
-							</h1>
+							</div>
 							<div className="flex mb-4">
 								<button
 									onClick={() => handleAddToCart({ ...data, cartQty: qty })}

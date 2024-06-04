@@ -1,7 +1,5 @@
-"use client";
-
 import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
-import { useState } from "react";
+
 import { toast } from "react-toastify";
 
 const cartAdapter = createEntityAdapter();
@@ -15,16 +13,6 @@ const cartSlice = createSlice({
 	name: "cart",
 	initialState,
 	reducers: {
-		populateCart(state, action) {
-			if (typeof Window !== "undefined") {
-				if (sessionStorage.getItem("cartItems")) {
-					cartAdapter.setAll(
-						state,
-						JSON.parse(sessionStorage.getItem("cartItems"))
-					);
-				}
-			}
-		},
 		addToCart(state, action) {
 			const productExist = state.entities[action.payload.id];
 
@@ -35,9 +23,6 @@ const cartSlice = createSlice({
 				toast.success("محصول به سبد خرید اضافه شد", {
 					position: "bottom-right",
 				});
-			}
-			if (typeof Window !== "undefined") {
-				sessionStorage.setItem("cartItems", JSON.stringify(state.entities));
 			}
 		},
 		getTotals(state, action) {
@@ -67,16 +52,9 @@ const cartSlice = createSlice({
 			} else if (product.cartQty === 1) {
 				cartAdapter.removeOne(state, action.payload.id);
 			}
-
-			if (typeof Window !== "undefined") {
-				sessionStorage.setItem("cartItems", JSON.stringify(state.entities));
-			}
 		},
 		removeFromCart(state, action) {
 			cartAdapter.removeOne(state, action.payload.id);
-			if (typeof Window !== "undefined") {
-				sessionStorage.setItem("cartItems", JSON.stringify(state.entities));
-			}
 
 			toast.error("محصول از سبد خرید حذف شد", {
 				position: "bottom-left",
@@ -87,12 +65,7 @@ const cartSlice = createSlice({
 
 export const { selectAll } = cartAdapter.getSelectors((state) => state.cart);
 
-export const {
-	populateCart,
-	addToCart,
-	getTotals,
-	decreaseCart,
-	removeFromCart,
-} = cartSlice.actions;
+export const { addToCart, getTotals, decreaseCart, removeFromCart } =
+	cartSlice.actions;
 
 export default cartSlice.reducer;

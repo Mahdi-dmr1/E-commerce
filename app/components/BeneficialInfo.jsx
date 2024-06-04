@@ -13,6 +13,7 @@ export default function BeneficialInfo({ beneficialInfo }) {
 						height={100}
 						src={data.image}
 						className="flex justify-start rounded-full  col-span-2 "
+						alt="benefit"
 					/>
 					<h1 className=" text-gray-500 text-sm items-center flex justify-end col-span-3">
 						{data.title}

@@ -49,10 +49,10 @@ export default function HomePage() {
 								<div
 									className="w-full shadow-lg rounded-lg py-4 text-center  mb-2 hover:scale-105 duration-300 "
 									style={{ backgroundColor: "#17B5B5" }}>
-									<h1 className="text-white text-lg flex justify-center">
+									<div className="text-white text-lg flex justify-center">
 										خرید جنس{" "}
 										<h1 className="text-black mr-2 font-bold">استوک</h1>
-									</h1>
+									</div>
 								</div>
 								{/*matalebe mofid*/}
 								<BeneficialInfo beneficialInfo={beneficialInfo} />
@@ -67,6 +67,7 @@ export default function HomePage() {
 									<h1 className=" text-3xl text-white">اسمبل آنلاین</h1>
 								</div>
 								<Image
+									alt="contact"
 									src={contact}
 									loading="lazy"
 									width={400}

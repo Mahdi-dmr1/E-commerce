@@ -31,7 +31,13 @@ export default function SwiperJs({ images }) {
 			className="mySwiper  shadow-lg ">
 			{images.map((data, key) => (
 				<SwiperSlide key={key}>
-					<Image width={800} height={200} loading="lazy" src={data.url} />
+					<Image
+						width={800}
+						height={200}
+						loading="lazy"
+						alt="swiper"
+						src={data.url}
+					/>
 				</SwiperSlide>
 			))}
 		</Swiper>

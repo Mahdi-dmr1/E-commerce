@@ -2,7 +2,6 @@
 
 import { useGetAllProductsQuery } from "@/slices/productApi";
 import Navbar from "../components/Navbar";
-import { MdKeyboardArrowDown } from "react-icons/md";
 
 import ProductsPage from "../components/ProductsPage";
 import Sidebar from "../components/Sidebar";
