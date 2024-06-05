@@ -20,7 +20,7 @@ function ProductsPage({ information, title }) {
 										loading="lazy"
 										className="hover:scale-110 duration-150"
 										alt="image"
-										src={`https://e-commerce-latest-khaki.vercel.app/assets/${info.image}`}
+										src={`https://shopapi.mahdisportfolio.ir/assets/${info.image}`}
 									/>
 								</div>
 

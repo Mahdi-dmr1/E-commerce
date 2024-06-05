@@ -75,7 +75,7 @@ export default function ProductPage() {
 										<img
 											alt="product"
 											loading="lazy"
-											src={`https://e-commerce-latest-khaki.vercel.app/assets/${info}`}
+											src={`https://shopapi.mahdisportfolio.ir/assets/${info}`}
 										/>
 									</SwiperSlide>
 								))}
